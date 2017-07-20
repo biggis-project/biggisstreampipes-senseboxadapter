@@ -27,7 +27,7 @@ public class ExampleSourcesInit extends StandaloneModelSubmitter {
             TOTORIAL:
             First a port for the service is set and then the server is started
          */
-        DeclarersSingleton.getInstance().setPort(8089);
+        DeclarersSingleton.getInstance().setPort(8085);
         new ExampleSourcesInit().init();
     }
 
