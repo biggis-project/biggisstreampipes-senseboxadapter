@@ -11,9 +11,9 @@ The project currently has a source for some example vehicle information and a te
 * samples
    * VehicleSource: Describes the producer for all vehicle streams
 	 * VehiclePositionStream: Is a data stream that provides the current location of different vehicles.
-	Example event:
 
 	```javascript
+	// 	Example event:
 	    {
 	    	"timestamp": 1500540365,
 	    	"plateNumber": "MC89",
