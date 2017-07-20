@@ -12,13 +12,13 @@ The project currently has a source for some example vehicle information and a te
    * VehicleSource: Describes the producer for all vehicle streams
 	 * VehiclePositionStream: Is a data stream that provides the current location of different vehicles.
 	Example event:
-	```json
-	{
-		"timestamp": 1500540365,
-		"plateNumber": "MC89",
-		"latitude": 49.008085,
-		"longitude": 8.403756
-	}
+	```javascript
+	    {
+	    	"timestamp": 1500540365,
+	    	"plateNumber": "MC89",
+	    	"latitude": 49.008085,
+	    	"longitude": 8.403756
+	    }
 	```
 * template
   * Is a template that can be extended to create your own source
