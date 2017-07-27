@@ -1,9 +1,7 @@
-package org.streampipes.templates.sources;
+package org.streampipes.biggis.sources.sensebox;
 
 import org.streampipes.container.init.DeclarersSingleton;
 import org.streampipes.container.standalone.init.StandaloneModelSubmitter;
-import org.streampipes.templates.sources.samples.VehicleSource;
-import org.streampipes.templates.sources.template.TemplateSource;
 
 /*
     TUTORIAL:
@@ -12,7 +10,7 @@ import org.streampipes.templates.sources.template.TemplateSource;
     The main method starts a web server that provides all the descriptions of the registered
     producers and their streams.
  */
-public class ExampleSourcesInit extends StandaloneModelSubmitter {
+public class Main extends StandaloneModelSubmitter {
 
     public static void main(String[] args) {
 
@@ -21,14 +19,13 @@ public class ExampleSourcesInit extends StandaloneModelSubmitter {
             Add the newly created event producer to the declarer singleton
          */
         DeclarersSingleton.getInstance()
-                .add(new VehicleSource())
-                .add(new TemplateSource());
+                .add(new SenseboxSource());
         /*
             TOTORIAL:
             First a port for the service is set and then the server is started
          */
         DeclarersSingleton.getInstance().setPort(8085);
-        new ExampleSourcesInit().init();
+        new Main().init();
     }
 
 }

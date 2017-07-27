@@ -59,7 +59,7 @@
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>org.streampipes.templates.sources.ExampleSourcesInit</mainClass>
+                                    <mainClass>org.streampipes.biggis.sources.sensebox.Main</mainClass>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                             </transformers>
@@ -95,7 +95,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.streampipes.templates.sources.ExampleSourcesInit</mainClass>
+                            <mainClass>org.streampipes.biggis.sources.sensebox.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

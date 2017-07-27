@@ -1,4 +1,4 @@
-package org.streampipes.templates.sources.samples;
+package org.streampipes.biggis.sources.sensebox;
 
 import org.streampipes.container.declarer.EventStreamDeclarer;
 import org.streampipes.container.declarer.SemanticEventProducerDeclarer;
@@ -9,15 +9,15 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class VehicleSource implements SemanticEventProducerDeclarer {
+public class SenseboxSource implements SemanticEventProducerDeclarer {
 
   public SepDescription declareModel() {
-    return DataSourceBuilder.create("source-vehicle", "Vehicle Source", "A data source that " +
-            "holds event streams produced by vehicles.")
+    return DataSourceBuilder.create("source-sensebox", "Sensebox Source", "A data source that " +
+            "holds event streams produced by Senseboxes.")
             .build();
   }
 
   public List<EventStreamDeclarer> getEventStreams() {
-    return Arrays.asList(new VehiclePositionStream());
+    return Arrays.asList(new SenseboxMeasurementsStream());
   }
 }
