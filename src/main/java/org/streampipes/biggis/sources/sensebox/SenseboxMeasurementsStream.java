@@ -1,6 +1,7 @@
 package org.streampipes.biggis.sources.sensebox;
 
 import org.streampipes.model.impl.EventStream;
+import org.streampipes.model.impl.KafkaTransportProtocol;
 import org.streampipes.model.impl.graph.SepDescription;
 import org.streampipes.model.vocabulary.Geo;
 import org.streampipes.sdk.builder.DataStreamBuilder;
@@ -8,6 +9,7 @@ import org.streampipes.sdk.helpers.EpProperties;
 import org.streampipes.sdk.helpers.Formats;
 import org.streampipes.sdk.helpers.Protocols;
 import org.streampipes.sources.AbstractAlreadyExistingStream;
+import org.streampipes.config.backend.BackendConfig;
 
 public class SenseboxMeasurementsStream extends AbstractAlreadyExistingStream {
 
@@ -24,8 +26,7 @@ public class SenseboxMeasurementsStream extends AbstractAlreadyExistingStream {
               .property(EpProperties.doubleEp("lux", "http://schema.org/luminosity"))
               .property(EpProperties.doubleEp("uv", "http://schema.org/radiation"))
               .format(Formats.jsonFormat())
-              .protocol(Protocols.kafka("eurasier", 9092, "sensebox-measurements-unified"))
+              .protocol(Protocols.kafka(BackendConfig.INSTANCE.getKafkaHost(), BackendConfig.INSTANCE.getKafkaPort(), "sensebox-measurements-unified"))
               .build();
-
   }
 }
