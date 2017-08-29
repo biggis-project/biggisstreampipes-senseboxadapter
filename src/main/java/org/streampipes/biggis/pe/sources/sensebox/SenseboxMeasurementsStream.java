@@ -26,7 +26,7 @@ public class SenseboxMeasurementsStream extends AbstractAlreadyExistingStream {
               .property(EpProperties.doubleEp("lux", "http://schema.org/luminosity"))
               .property(EpProperties.doubleEp("uv", "http://schema.org/radiation"))
               .format(Formats.jsonFormat())
-              .protocol(Protocols.kafka(SenseboxConfig.INSTANCE.getKafkaHost(), SenseboxConfig.INSTANCE.getKafkaPort(), "sensebox-measurements-unified"))//TODO: topic in Consul
+              .protocol(Protocols.kafka(SenseboxConfig.INSTANCE.getKafkaHost(), SenseboxConfig.INSTANCE.getKafkaPort(), SenseboxConfig.INSTANCE.getKafkaTopic()))
               .build();
   }
 }
