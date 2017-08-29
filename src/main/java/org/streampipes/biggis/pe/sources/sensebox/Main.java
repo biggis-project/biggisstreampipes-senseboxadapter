@@ -1,4 +1,4 @@
-package org.streampipes.biggis.sources.sensebox;
+package org.streampipes.biggis.pe.sources.sensebox;
 
 import org.streampipes.container.init.DeclarersSingleton;
 import org.streampipes.container.standalone.init.StandaloneModelSubmitter;
@@ -9,7 +9,8 @@ public class Main extends StandaloneModelSubmitter {
         DeclarersSingleton.getInstance()
                 .add(new SenseboxSource());
 
-        DeclarersSingleton.getInstance().setPort(8085);
+        DeclarersSingleton.getInstance().setHostName(SenseboxConfig.INSTANCE.getHost());
+        DeclarersSingleton.getInstance().setPort(SenseboxConfig.INSTANCE.getPort());
         new Main().init();
     }
 

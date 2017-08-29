@@ -1,4 +1,4 @@
-package org.streampipes.biggis.sources.sensebox;
+package org.streampipes.biggis.pe.sources.sensebox;
 
 import org.streampipes.container.declarer.EventStreamDeclarer;
 import org.streampipes.container.declarer.SemanticEventProducerDeclarer;

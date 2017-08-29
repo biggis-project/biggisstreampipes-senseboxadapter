@@ -1,4 +1,4 @@
-package org.streampipes.biggis.sources.sensebox;
+package org.streampipes.biggis.pe.sources.sensebox;
 
 import org.streampipes.model.impl.EventStream;
 import org.streampipes.model.impl.KafkaTransportProtocol;
@@ -26,7 +26,7 @@ public class SenseboxMeasurementsStream extends AbstractAlreadyExistingStream {
               .property(EpProperties.doubleEp("lux", "http://schema.org/luminosity"))
               .property(EpProperties.doubleEp("uv", "http://schema.org/radiation"))
               .format(Formats.jsonFormat())
-              .protocol(Protocols.kafka(BackendConfig.INSTANCE.getKafkaHost(), BackendConfig.INSTANCE.getKafkaPort(), "sensebox-measurements-unified"))
+              .protocol(Protocols.kafka(SenseboxConfig.INSTANCE.getKafkaHost(), SenseboxConfig.INSTANCE.getKafkaPort(), "sensebox-measurements-unified"))//TODO: topic in Consul
               .build();
   }
 }
